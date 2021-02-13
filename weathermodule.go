@@ -235,79 +235,79 @@ func (w *WeatherModule) InitializeMinimallyWeatherModule(city string, apiKey str
 }
 
 //
-func (w *WeatherModule) GetCoords() Coordinates {
+func (w *WeatherModule) GetCoords() *Coordinates {
 
 	return &w.coords
 }
 
 //
-func (w *WeatherModule) GetWeather() Weather {
+func (w *WeatherModule) GetWeather() *Weather {
 
 	return &w.weather
 }
 
 //
-func (w *WeatherModule) GetTemperature() Temperature {
+func (w *WeatherModule) GetTemperature() *Temperature {
 
 	return &w.temperature
 }
 
 //
-func (w *WeatherModule) GetFeelingLikeTemperature() Temperature {
+func (w *WeatherModule) GetFeelingLikeTemperature() *Temperature {
 
 	return &w.feelingLikeTemperature
 }
 
 //
-func (w *WeatherModule) GetMinTemperature() Temperature {
+func (w *WeatherModule) GetMinTemperature() *Temperature {
 
 	return &w.minTemperature
 }
 
 //
-func (w *WeatherModule) GetMaxTemperature() Temperature {
+func (w *WeatherModule) GetMaxTemperature() *Temperature {
 
 	return &w.maxTemperature
 }
 
 //
-func (w *WeatherModule) GetPressure() Pressure {
+func (w *WeatherModule) GetPressure() *Pressure {
 
 	return &w.pressure
 }
 
 //
-func (w *WeatherModule) GetHumidity() Humidity {
+func (w *WeatherModule) GetHumidity() *Humidity {
 
 	return &w.humidity
 }
 
 //
-func (w *WeatherModule) GetWind() Wind {
+func (w *WeatherModule) GetWind() *Wind {
 
 	return &w.wind
 }
 
 //
-func (w *WeatherModule) GetSunrise() SunTime {
+func (w *WeatherModule) GetSunrise() *SunTime {
 
 	return &w.sunrise
 }
 
 //
-func (w *WeatherModule) GetSunset() SunTime {
+func (w *WeatherModule) GetSunset() *SunTime {
 
 	return &w.sunset
 }
 
 //
-func (w *WeatherModule) GetGeographicLocation() GeographicLocation {
+func (w *WeatherModule) GetGeographicLocation() *GeographicLocation {
 
 	return &w.geographicLocation
 }
 
 //
-func (w *WeatherModule) GetUltraViolet() UV {
+func (w *WeatherModule) GetUltraViolet() *UV {
 
 	return &w.ultraViolet
 }
