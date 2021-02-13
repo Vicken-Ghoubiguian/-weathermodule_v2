@@ -23,6 +23,11 @@ This repository is composed of one Go file named *weathermodule.go* which contai
 <a name="how_to_use_it"></a>
 ## How to use it ?
 
+```bash
+$ go get -u github.com/Vicken-Ghoubiguian/weathermodule_v2
+```
+This will retrieve the library.
+
 <a name="a_little_example"></a>
 ## A little example
 
