@@ -48,7 +48,7 @@ type WeatherModule struct {
 func (w *WeatherModule) InitializeWeatherModule(city string, countrysISOAlpha2Code string, apiKey string) {
 
 	//
-	varOWMStruct
+	var owm OWMStruct
 
 	// Defining the HTTP request's URL for weather and uv
 	weatherRequest := fmt.Sprintf("https://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s", city + "," + countrysISOAlpha2Code, apiKey)
@@ -143,7 +143,7 @@ func (w *WeatherModule) InitializeWeatherModule(city string, countrysISOAlpha2Co
 func (w *WeatherModule) InitializeMinimallyWeatherModule(city string, apiKey string) {
 
 	//
-	varOWMStruct
+	var owm OWMStruct
 
 	// Defining the HTTP request's URL for weather and uv
 	weatherRequest := fmt.Sprintf("https://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s", city, apiKey)
