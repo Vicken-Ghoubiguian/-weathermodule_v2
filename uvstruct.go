@@ -1,4 +1,4 @@
-package owmStructures
+package weathermodule_v2
 
 type UVStruct struct {
 	Lat float64 `json:"lat"`

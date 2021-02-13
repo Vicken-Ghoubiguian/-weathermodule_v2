@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"strconv"
 	"encoding/json"
-	"owmStructures"
 	"io/ioutil"
 	"net/http"
 )
@@ -49,7 +48,7 @@ type WeatherModule struct {
 func (w *WeatherModule) InitializeWeatherModule(city string, countrysISOAlpha2Code string, apiKey string) {
 
 	//
-	var owm owmStructures.OWMStruct
+	varOWMStruct
 
 	// Defining the HTTP request's URL for weather and uv
 	weatherRequest := fmt.Sprintf("https://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s", city + "," + countrysISOAlpha2Code, apiKey)
@@ -81,7 +80,7 @@ func (w *WeatherModule) InitializeWeatherModule(city string, countrysISOAlpha2Co
 	} else {
 
 		//
-		var UVowm owmStructures.UVStruct
+		var UUVStruct
 
 		//
 		uvRequest := fmt.Sprintf("https://api.openweathermap.org/data/2.5/uvi?appid=%s&lat=%s&lon=%s", apiKey, fmt.Sprintf("%g", owm.Coord.Lat), fmt.Sprintf("%g", owm.Coord.Lon))
@@ -144,7 +143,7 @@ func (w *WeatherModule) InitializeWeatherModule(city string, countrysISOAlpha2Co
 func (w *WeatherModule) InitializeMinimallyWeatherModule(city string, apiKey string) {
 
 	//
-	var owm owmStructures.OWMStruct
+	varOWMStruct
 
 	// Defining the HTTP request's URL for weather and uv
 	weatherRequest := fmt.Sprintf("https://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s", city, apiKey)
@@ -176,7 +175,7 @@ func (w *WeatherModule) InitializeMinimallyWeatherModule(city string, apiKey str
 	} else {
 
 		//
-		var UVowm owmStructures.UVStruct
+		var UUVStruct
 
 		//
 		uvRequest := fmt.Sprintf("https://api.openweathermap.org/data/2.5/uvi?appid=%s&lat=%s&lon=%s", apiKey, fmt.Sprintf("%g", owm.Coord.Lat), fmt.Sprintf("%g", owm.Coord.Lon))
