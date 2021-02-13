@@ -46,7 +46,7 @@ func main() {
 	//
 	var weatherObj weathermodule_v2.WeatherModule
 
-	weatherObj.InitializeWeatherModule("Paris", "fr", "5222a1c311ca31001b0877137d584c36")
+	weatherObj.InitializeWeatherModule("<wished_city_name>", "<wished_country_code>", "<Your_OpenWeather_Map_API_key>")
 
 	fmt.Printf("" + weatherObj.GetGeographicLocation().GetCityName() + " (" + weatherObj.GetGeographicLocation().GetCountryCode() + ")\n")
 
