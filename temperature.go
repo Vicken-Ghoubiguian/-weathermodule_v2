@@ -1,4 +1,4 @@
-package weatherClasses
+package weathermodule_v2
 
 //
 import (

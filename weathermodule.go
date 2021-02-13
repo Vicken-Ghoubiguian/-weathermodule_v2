@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"strconv"
 	"encoding/json"
-	"weatherClasses"
 	"owmStructures"
 	"io/ioutil"
 	"net/http"
@@ -15,35 +14,35 @@ import (
 type WeatherModule struct {
 
 	//
-	coords weatherClasses.Coordinates
+	coords Coordinates
 
 	//
-	weather weatherClasses.Weather
+	weather Weather
 
 	//
-	temperature weatherClasses.Temperature
-	feelingLikeTemperature weatherClasses.Temperature
-	minTemperature weatherClasses.Temperature
-	maxTemperature weatherClasses.Temperature
+	temperature Temperature
+	feelingLikeTemperature Temperature
+	minTemperature Temperature
+	maxTemperature Temperature
 
 	//
-	pressure weatherClasses.Pressure
+	pressure Pressure
 
 	//
-	humidity weatherClasses.Humidity
+	humidity Humidity
 
 	//
-	wind weatherClasses.Wind
+	wind Wind
 
 	//
-	sunrise weatherClasses.SunTime
-	sunset weatherClasses.SunTime
+	sunrise SunTime
+	sunset SunTime
 
 	//
-	geographicLocation weatherClasses.GeographicLocation
+	geographicLocation GeographicLocation
 
 	//
-	ultraViolet weatherClasses.UV
+	ultraViolet UV
 }
 
 // Defining the Weather initializer
@@ -59,25 +58,25 @@ func (w *WeatherModule) InitializeWeatherModule(city string, countrysISOAlpha2Co
 	weatherResp, err := http.Get(weatherRequest)
 
 	//
-	OtherErrorHandlerFunction(err, weatherClasses.Red(), weatherClasses.Reset())
+	OtherErrorHandlerFunction(err, Red(), Reset())
 
 	//
 	weatherJsonString, err := ioutil.ReadAll(weatherResp.Body)
 
 	//
-	OtherErrorHandlerFunction(err, weatherClasses.Red(), weatherClasses.Reset())
+	OtherErrorHandlerFunction(err, Red(), Reset())
 
 	//Single instruction to convert weather_json_string []byte variable to string
 	err = json.Unmarshal(weatherJsonString, &owm)
 
 	//
-	OtherErrorHandlerFunction(err, weatherClasses.Red(), weatherClasses.Reset())
+	OtherErrorHandlerFunction(err, Red(), Reset())
 
 	//
 	if owm.Cod != 200 {
 
 		// Calling the 'owmErrorHandlerFunction' from the module to treat the current error...
-		OwmErrorHandlerFunction(strconv.Itoa(int(owm.Cod)), weatherClasses.Red(), owm.Message, weatherClasses.Reset())
+		OwmErrorHandlerFunction(strconv.Itoa(int(owm.Cod)), Red(), owm.Message, Reset())
 
 	} else {
 
@@ -91,19 +90,19 @@ func (w *WeatherModule) InitializeWeatherModule(city string, countrysISOAlpha2Co
 		uvResp, err := http.Get(uvRequest)
 
 		//
-		OtherErrorHandlerFunction(err, weatherClasses.Red(), weatherClasses.Reset())
+		OtherErrorHandlerFunction(err, Red(), Reset())
 
 		//
 		uvJsonString, err := ioutil.ReadAll(uvResp.Body)
 
 		//
-		OtherErrorHandlerFunction(err, weatherClasses.Red(), weatherClasses.Reset())
+		OtherErrorHandlerFunction(err, Red(), Reset())
 
 		//
 		err = json.Unmarshal(uvJsonString, &UVowm)
 
 		//
-		OtherErrorHandlerFunction(err, weatherClasses.Red(), weatherClasses.Reset())
+		OtherErrorHandlerFunction(err, Red(), Reset())
 
 		//
 		w.coords.InitializeCoordinates(owm.Coord.Lon, owm.Coord.Lat)
@@ -137,7 +136,7 @@ func (w *WeatherModule) InitializeWeatherModule(city string, countrysISOAlpha2Co
 		w.ultraViolet.InitializeUV(int64(UVowm.Value))
 
 		// Displaying success message...
-		fmt.Println(weatherClasses.Green() + "Weather implemented successfully !" + weatherClasses.Reset() + "\n")
+		fmt.Println Green() + "Weather implemented successfully !" + Reset() + "\n")
 	}
 }
 
@@ -154,25 +153,25 @@ func (w *WeatherModule) InitializeMinimallyWeatherModule(city string, apiKey str
 	weatherResp, err := http.Get(weatherRequest)
 
 	//
-	OtherErrorHandlerFunction(err, weatherClasses.Red(), weatherClasses.Reset())
+	OtherErrorHandlerFunction(err, Red(), Reset())
 
 	//
 	weatherJsonString, err := ioutil.ReadAll(weatherResp.Body)
 
 	//
-	OtherErrorHandlerFunction(err, weatherClasses.Red(), weatherClasses.Reset())
+	OtherErrorHandlerFunction(err, Red(), Reset())
 
 	//Single instruction to convert weather_json_string []byte variable to string
 	err = json.Unmarshal(weatherJsonString, &owm)
 
 	//
-	OtherErrorHandlerFunction(err, weatherClasses.Red(), weatherClasses.Reset())
+	OtherErrorHandlerFunction(err, Red(), Reset())
 
 	//
 	if owm.Cod != 200 {
 
 		// Calling the 'owmErrorHandlerFunction' from the ' module to treat the current error...
-		OwmErrorHandlerFunction(strconv.Itoa(int(owm.Cod)), weatherClasses.Red(), owm.Message, weatherClasses.Reset())
+		OwmErrorHandlerFunction(strconv.Itoa(int(owm.Cod)), Red(), owm.Message, Reset())
 
 	} else {
 
@@ -186,19 +185,19 @@ func (w *WeatherModule) InitializeMinimallyWeatherModule(city string, apiKey str
 		uvResp, err := http.Get(uvRequest)
 
 		//
-		OtherErrorHandlerFunction(err, weatherClasses.Red(), weatherClasses.Reset())
+		OtherErrorHandlerFunction(err, Red(), Reset())
 
 		//
 		uvJsonString, err := ioutil.ReadAll(uvResp.Body)
 
 		//
-		OtherErrorHandlerFunction(err, weatherClasses.Red(), weatherClasses.Reset())
+		OtherErrorHandlerFunction(err, Red(), Reset())
 
 		//
 		err = json.Unmarshal(uvJsonString, &UVowm)
 
 		//
-		OtherErrorHandlerFunction(err, weatherClasses.Red(), weatherClasses.Reset())
+		OtherErrorHandlerFunction(err, Red(), Reset())
 
 		//
 		w.coords.InitializeCoordinates(owm.Coord.Lon, owm.Coord.Lat)
@@ -232,84 +231,84 @@ func (w *WeatherModule) InitializeMinimallyWeatherModule(city string, apiKey str
 		w.ultraViolet.InitializeUV(int64(UVowm.Value))
 
 		// Displaying success message...
-		fmt.Println(weatherClasses.Green() + "Weather implemented successfully !" + weatherClasses.Reset() + "\n")
+		fmt.Println Green() + "Weather implemented successfully !" + Reset() + "\n")
 	}
 }
 
 //
-func (w *WeatherModule) GetCoords() *weatherClasses.Coordinates {
+func (w *WeatherModule) GetCoords() Coordinates {
 
 	return &w.coords
 }
 
 //
-func (w *WeatherModule) GetWeather() *weatherClasses.Weather {
+func (w *WeatherModule) GetWeather() Weather {
 
 	return &w.weather
 }
 
 //
-func (w *WeatherModule) GetTemperature() *weatherClasses.Temperature {
+func (w *WeatherModule) GetTemperature() Temperature {
 
 	return &w.temperature
 }
 
 //
-func (w *WeatherModule) GetFeelingLikeTemperature() *weatherClasses.Temperature {
+func (w *WeatherModule) GetFeelingLikeTemperature() Temperature {
 
 	return &w.feelingLikeTemperature
 }
 
 //
-func (w *WeatherModule) GetMinTemperature() *weatherClasses.Temperature {
+func (w *WeatherModule) GetMinTemperature() Temperature {
 
 	return &w.minTemperature
 }
 
 //
-func (w *WeatherModule) GetMaxTemperature() *weatherClasses.Temperature {
+func (w *WeatherModule) GetMaxTemperature() Temperature {
 
 	return &w.maxTemperature
 }
 
 //
-func (w *WeatherModule) GetPressure() *weatherClasses.Pressure {
+func (w *WeatherModule) GetPressure() Pressure {
 
 	return &w.pressure
 }
 
 //
-func (w *WeatherModule) GetHumidity() *weatherClasses.Humidity {
+func (w *WeatherModule) GetHumidity() Humidity {
 
 	return &w.humidity
 }
 
 //
-func (w *WeatherModule) GetWind() *weatherClasses.Wind {
+func (w *WeatherModule) GetWind() Wind {
 
 	return &w.wind
 }
 
 //
-func (w *WeatherModule) GetSunrise() *weatherClasses.SunTime {
+func (w *WeatherModule) GetSunrise() SunTime {
 
 	return &w.sunrise
 }
 
 //
-func (w *WeatherModule) GetSunset() *weatherClasses.SunTime {
+func (w *WeatherModule) GetSunset() SunTime {
 
 	return &w.sunset
 }
 
 //
-func (w *WeatherModule) GetGeographicLocation() *weatherClasses.GeographicLocation {
+func (w *WeatherModule) GetGeographicLocation() GeographicLocation {
 
 	return &w.geographicLocation
 }
 
 //
-func (w *WeatherModule) GetUltraViolet() *weatherClasses.UV {
+func (w *WeatherModule) GetUltraViolet() UV {
 
 	return &w.ultraViolet
 }

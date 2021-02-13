@@ -1,4 +1,4 @@
-package weatherClasses
+package weathermodule_v2
 
 // Defining the type 'Coordinates' which stock and manage longitude and latitude of wished city
 type Coordinates struct {
