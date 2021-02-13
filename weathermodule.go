@@ -80,7 +80,7 @@ func (w *WeatherModule) InitializeWeatherModule(city string, countrysISOAlpha2Co
 	} else {
 
 		//
-		var UUVStruct
+		var UVowm UVStruct
 
 		//
 		uvRequest := fmt.Sprintf("https://api.openweathermap.org/data/2.5/uvi?appid=%s&lat=%s&lon=%s", apiKey, fmt.Sprintf("%g", owm.Coord.Lat), fmt.Sprintf("%g", owm.Coord.Lon))
@@ -135,7 +135,7 @@ func (w *WeatherModule) InitializeWeatherModule(city string, countrysISOAlpha2Co
 		w.ultraViolet.InitializeUV(int64(UVowm.Value))
 
 		// Displaying success message...
-		fmt.Println Green() + "Weather implemented successfully !" + Reset() + "\n")
+		fmt.Println(Green() + "Weather implemented successfully !" + Reset() + "\n")
 	}
 }
 
@@ -175,7 +175,7 @@ func (w *WeatherModule) InitializeMinimallyWeatherModule(city string, apiKey str
 	} else {
 
 		//
-		var UUVStruct
+		var UVowm UVStruct
 
 		//
 		uvRequest := fmt.Sprintf("https://api.openweathermap.org/data/2.5/uvi?appid=%s&lat=%s&lon=%s", apiKey, fmt.Sprintf("%g", owm.Coord.Lat), fmt.Sprintf("%g", owm.Coord.Lon))
@@ -230,7 +230,7 @@ func (w *WeatherModule) InitializeMinimallyWeatherModule(city string, apiKey str
 		w.ultraViolet.InitializeUV(int64(UVowm.Value))
 
 		// Displaying success message...
-		fmt.Println Green() + "Weather implemented successfully !" + Reset() + "\n")
+		fmt.Println(Green() + "Weather implemented successfully !" + Reset() + "\n")
 	}
 }
 
