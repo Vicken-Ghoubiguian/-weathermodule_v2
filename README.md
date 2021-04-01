@@ -110,6 +110,12 @@ func main() {
 <a name="a_few_usefull_links"></a>
 ## A few usefull links
 
+* [The Go official website](https://golang.org/),
+* [The official tutorials to get started](https://golang.org/doc/tutorial/),
+* [The Go Playground](https://play.golang.org/),
+* [Installing go modules from Github repository](https://medium.com/@yussufshaikh/installing-go-modules-from-github-repository-5e381cbd5683),
+* [Using Go Modules for Golang Dependency Management](https://www.whitesourcesoftware.com/free-developer-tools/blog/golang-dependency-management/)
+
 <a name="conclusion"></a>
 ## Conclusion
 
