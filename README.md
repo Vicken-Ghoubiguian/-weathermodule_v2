@@ -114,7 +114,9 @@ func main() {
 * [The official tutorials to get started](https://golang.org/doc/tutorial/),
 * [The Go Playground](https://play.golang.org/),
 * [Installing go modules from Github repository](https://medium.com/@yussufshaikh/installing-go-modules-from-github-repository-5e381cbd5683),
-* [Using Go Modules for Golang Dependency Management](https://www.whitesourcesoftware.com/free-developer-tools/blog/golang-dependency-management/)
+* [Using Go Modules for Golang Dependency Management](https://www.whitesourcesoftware.com/free-developer-tools/blog/golang-dependency-management/),
+* [OpenWeather](https://openweathermap.org/),
+* [OpenWeather API](https://openweathermap.org/api)
 
 <a name="conclusion"></a>
 ## Conclusion
