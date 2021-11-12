@@ -24,7 +24,7 @@ It is the second (and final) version of the [weathermodule](https://github.com/V
 ## How to use it ?
 
 ```bash
-$ go get -u github.com/Vicken-Ghoubiguian/weathermodule_v2
+go get -u github.com/Vicken-Ghoubiguian/weathermodule_v2
 ```
 This will retrieve the library.
 
