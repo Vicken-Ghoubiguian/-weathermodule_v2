@@ -1,3 +1,3 @@
-module weathermodule_v2
+module github.com/Vicken-Ghoubiguian/weathermodule_v2
 
-go 1.16
+go 1.17
